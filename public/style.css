@@ -1,0 +1,87 @@
+body {
+    background-color: rgba(124, 240, 195, 0.541);
+}
+
+h2 {
+    font-size: 50px;
+    background: -webkit-linear-gradient(#e106d0, #08a4af, #885903);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 5%;
+}
+
+h3 {
+    font-size: 30px;
+    background: -webkit-linear-gradient(#885903, #e106d0, #08a4af);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 5%;
+}
+.gardelis {
+    display: flexbox;
+    background-color: rgba(73, 148, 119, 0.918);
+    color: oldlace;
+    width: 200px;
+    height: 120px;
+    align-self: center;
+    border: 9px double rebeccapurple;
+    margin: 10px;
+}
+
+a.chg-btn {
+    border: 1px solid;
+    text-decoration: none;
+    float: left;
+    background-color: #1400cc;
+    border: 1px solid #660000;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px;
+    padding: 9px;
+}
+
+button.del-btn {
+    border: 1px solid;
+    text-decoration: none;
+    float: left;
+    background-color: #cc0000;
+    border: 1px solid #660000;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px;
+    padding: 10px;
+}
+button.go-btn {
+    border: 1px solid;
+    text-decoration: none;
+    float: left;
+    background-image: linear-gradient(to bottom right, red, darkolivegreen, darkslateblue);
+    border: 1px solid #ccf1fa;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px;
+    padding: 10px;
+}
+
+a.add-btn {
+    width: 150px;
+    border: 1px solid;
+    text-decoration: none;
+    float: left;
+    background-color: #138d23;
+    border: 1px solid #660000;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px 0px 10px 60px;
+    padding: 10px 0px 10px 50px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, red, darkolivegreen, darkslateblue);
+    color: whitesmoke ;
+    text-align: center;
+}

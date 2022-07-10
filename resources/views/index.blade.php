@@ -4,26 +4,32 @@
 @section('content')
     <ul>
         @forelse ($animals as $animal)
-            <li>
                 <div class="gardelis">
-                    Gyvūnas: {{ $animal->name }};
-                    Rūšis: {{ $animal->species }};
-                    Svoris: {{ $animal->weight }};
-                </div>
-            </li>
-            <a href="{{ route('edit', $animal) }}">Koreguoti</a>
+                    Gyvūnas: {{ $animal->name }} 
+                    <br>
+                    Rūšis: 
+                    @if ($animal->species == "1")
+                        Žinduolis
+                    @elseif ($animal->species == "2")
+                        Paukštis
+                    @else
+                        Žuvis
+                    @endif
+                    <br>
+                    Svoris: {{ $animal->weight }} kg
+            <br>
+            <a class="chg-btn" href="{{ route('edit', $animal) }}">Koreguoti</a>
             <form class="trintukas" action="{{ route('delete', $animal) }}" method="POST">
                 @csrf
                 @method('delete')
-                <button type="submit">Pašalinti</button>
+                <button type="submit" class="del-btn">Pašalinti</button>
             </form>
-
-
+                </div>
         @empty
-            <li>Kol kas tusčia. Pridėk ką nors!</li>
+            <span>Kol kas tusčia. Pridėk gyvūnų!</span>
         @endforelse
     </ul>
     
-    <a href="{{ route('create') }}">Pridėti ką nors</a>
+    <a class="add-btn" href="{{ route('create') }}">Pridėti gyvūną</a>
 
 @endsection
