@@ -9,6 +9,8 @@
 </head>
 <body>
     <h2>Pasiganykime su Laraveliu</h2>
+    @include('parts.msg')
+    @include('parts.nav')
     @yield('content')
 </body>
 <footer>Amžinos ganyklos plotai</footer>

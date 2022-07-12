@@ -19,6 +19,8 @@
   <br>
   <input type="number" name="animal_weight" min="1" max="9999" value="{{ $animal->weight }}" />
   <br>
+  <input type="text" name="animal_house" value="{{ $animal->house }}" />
+  <br>
 @csrf
 @method('put')
   <button type="submit" class="go-btn">Pakeisti</button>

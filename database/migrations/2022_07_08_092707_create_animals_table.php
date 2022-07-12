@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name', 25);
             $table->unsignedTinyInteger('species');
             $table->smallInteger('weight');
+            $table->string('house', 25);
             $table->timestamps();
         });
     }

@@ -30,3 +30,6 @@ Route::get('/ganykla/edit/{animal}', [A::class, 'edit'])->name('edit');
 Route::put('/ganykla/{animal}', [A::class, 'update'])->name('update');
 
 Route::delete('/ganykla/{animal}', [A::class, 'destroy'])->name('delete');
+
+Route::get('/ganykla/show/{id}', [A::class, 'show'])->name('show');
+

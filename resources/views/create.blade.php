@@ -11,8 +11,10 @@ Rūšis: <select name="animal_species">
 </select>
 <br>
 Svoris: <input type="number" name="animal_weight" min="1" max="9999"/>
-@csrf
 <br>
+Būstas: <input type="text" name="animal_house" size="12"/>
+<br>
+@csrf
 <button type="submit" class="go-btn">Pridėti</button>
 </form>
 </div>

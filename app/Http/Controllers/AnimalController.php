@@ -12,9 +12,18 @@ class AnimalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $animals = Animal::all();
+        // $animals = Animal::all()->sortByDesc('name');
+        // $animals = Animal::orderBy('name')->get();
+        // $animals = Animal::orderBy('name', 'desc')->orderBy('weight', 'asc')->get();
+        // $animals = Animal::where('id', '>', 1)->orderBy('name')->get();
+
+        $animals = match($request->sort) {
+            'asc' => Animal::orderBy('name', 'asc')->get(),
+            'desc' => Animal::orderBy('name', 'desc')->get(),
+            default => Animal::all(),
+        };
 
         return view('index', ['animals' => $animals]);
     }
@@ -42,10 +51,11 @@ class AnimalController extends Controller
         $animal -> name = $request->animal_name;
         $animal -> species = $request->animal_species;
         $animal -> weight = $request->animal_weight;
+        $animal -> house = $request->animal_house ?? 'Laukinis benamis';
 
         $animal -> save();
 
-        return redirect()->route('index');
+        return redirect()->route('index')->with('success', 'Naujas gyvūnas sukurtas');
     }
 
     /**
@@ -54,9 +64,11 @@ class AnimalController extends Controller
      * @param  \App\Models\Animal  $animal
      * @return \Illuminate\Http\Response
      */
-    public function show(Animal $animal)
+    public function show(int $animalId)
     {
-        //
+        $animal = Animal::where('id', $animalId)->first();
+
+        return view('show', ['animal' => $animal]);
     }
 
     /**
@@ -82,10 +94,11 @@ class AnimalController extends Controller
         $animal -> name = $request->animal_name;
         $animal -> species = $request->animal_species;
         $animal -> weight = $request->animal_weight;
+        $animal -> house = $request->animal_house ?? 'Laukinis benamis';
 
         $animal -> save();
 
-        return redirect()->route('index');
+        return redirect()->route('index')->with('success', 'Gyvūnas pakoreguotas');
     }
 
     /**
@@ -98,6 +111,6 @@ class AnimalController extends Controller
     {
         $animal -> delete();
 
-        return redirect()->route('index');
+        return redirect()->route('index')->with('deleted', 'Gyvūnas ištrintas');
     }
 }

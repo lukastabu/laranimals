@@ -21,8 +21,8 @@ h3 {
     display: flexbox;
     background-color: rgba(73, 148, 119, 0.918);
     color: oldlace;
-    width: 200px;
-    height: 120px;
+    width: 300px;
+    height: 130px;
     align-self: center;
     border: 9px double rebeccapurple;
     margin: 10px;
@@ -50,7 +50,9 @@ button.del-btn {
     color: #fff;
     margin: 10px;
     padding: 10px;
+    cursor: pointer;
 }
+
 button.go-btn {
     border: 1px solid;
     text-decoration: none;
@@ -63,7 +65,7 @@ button.go-btn {
     padding: 10px;
 }
 
-a.add-btn {
+/* a.add-btn {
     width: 150px;
     border: 1px solid;
     text-decoration: none;
@@ -74,7 +76,7 @@ a.add-btn {
     color: #fff;
     margin: 10px 0px 10px 60px;
     padding: 10px 0px 10px 50px;
-}
+} */
 
 footer {
     position: fixed;
@@ -84,4 +86,43 @@ footer {
     background-image: linear-gradient(to bottom right, red, darkolivegreen, darkslateblue);
     color: whitesmoke ;
     text-align: center;
+}
+
+.alert-success {
+    display: flex;
+    background-color: lightgreen;
+    padding: 10px;
+}
+
+.alert-deleted {
+    color: white;
+    background-color: red;
+    display: flex;
+    padding: 10px;
+}
+
+nav{
+    margin: 20px 0 0 20px;
+}
+
+nav > a {
+    background-color: royalblue;
+    color: white;
+    text-decoration: none;
+    border: 1px solid rebeccapurple;
+    padding: 10px;
+}
+
+.srt-menu {
+    margin: 20px 0 0 20px;
+    padding-top: 20px;
+    list-style: none;
+}
+.srt-btn {
+    background-color: rgb(8, 28, 89);
+    color: white;
+    text-decoration: none;
+    border: 1px solid rebeccapurple;
+    padding: 5px;
+    border-radius: 15px;
 }
