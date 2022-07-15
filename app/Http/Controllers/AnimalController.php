@@ -109,8 +109,10 @@ class AnimalController extends Controller
      */
     public function destroy(Animal $animal)
     {
-        $animal -> delete();
-
-        return redirect()->route('index')->with('deleted', 'Gyvūnas ištrintas');
+        if(!$animal ->takefood->count()) {
+            $animal -> delete();
+            return redirect()->route('index')->with('deleted', 'Gyvūnas ištrintas');
+        }
+        return redirect()->back()->with('deleted', 'Gyvūnas negali būt ištrintas, nes jam priklauso Ėdalas');
     }
 }
