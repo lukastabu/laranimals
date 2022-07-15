@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimalController as A;
+use App\Http\Controllers\FoodController as F;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +33,20 @@ Route::put('/ganykla/{animal}', [A::class, 'update'])->name('update');
 Route::delete('/ganykla/{animal}', [A::class, 'destroy'])->name('delete');
 
 Route::get('/ganykla/show/{id}', [A::class, 'show'])->name('show');
+
+
+//Food
+Route::get('/edalas', [F::class, 'index'])->name('food-index');
+
+Route::get('/edalas/create', [F::class, 'create'])->name('food-create');
+
+Route::post('/edalas', [F::class, 'store'])->name('food-store');
+
+Route::get('/edalas/edit/{food}', [F::class, 'edit'])->name('food-edit');
+
+Route::put('/edalas/{food}', [F::class, 'update'])->name('food-update');
+
+Route::delete('/edalas/{food}', [F::class, 'destroy'])->name('food-delete');
+
+Route::get('/edalas/show/{id}', [F::class, 'show'])->name('food-show');
 
