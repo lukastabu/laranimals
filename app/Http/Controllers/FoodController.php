@@ -20,8 +20,8 @@ class FoodController extends Controller
         // $animals = Animal::where('id', '>', 1)->orderBy('name')->get();
 
         $foods = match($request->sort) {
-            'asc' => Food::orderBy('name', 'asc')->get(),
-            'desc' => Food::orderBy('name', 'desc')->get(),
+            'asc' => Food::orderBy('title', 'asc')->get(),
+            'desc' => Food::orderBy('title', 'desc')->get(),
             default => Food::all(),
         };
 
